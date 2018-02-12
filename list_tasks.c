@@ -5,12 +5,16 @@
 
 int list_tasks_init(void) {
 	struct task_struct *task;
-	
+		
+	printk(KERN_INFO "Loading module\n");
+	for_each_process(task) {
+		printk(KERN_INFO "pid: %d, pname: %s, state: %ld\n", task->pid, task->comm, task->state); 
+	}
 	
 	return 0;	
 }
 
-int list_tasks_delete(void) {
+void list_tasks_delete(void) {
 	printk(KERN_INFO "Removing Module\n");
 }
 
