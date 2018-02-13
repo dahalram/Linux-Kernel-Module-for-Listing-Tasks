@@ -2,3 +2,5 @@
 *.o
 *.ko
 *.cmd
+*.symvers
+*.order
